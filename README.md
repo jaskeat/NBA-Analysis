@@ -62,4 +62,6 @@ Before we move onto the conclusions, I just want to highlight some possible impr
 
 ### Conclusion
 
-From our analysis, we can confidently conclude that while defense is a vital component of winning in the NBA, offense tends to be slightly more important. Championship teams generally exhibit better offensive stats than defensive stats, and the correlation between winning and offensive ratings is higher. This challenges the age-old saying, "Defense wins championships."
+From our analysis, we can confidently conclude that while defense is a vital component of winning in the NBA, offense tends to be slightly more important. Championship teams generally exhibit better offensive stats than defensive stats, and the correlation between winning and offensive ratings is higher. This challenges the age-old saying, "Defense wins championships.".
+
+You can explore my code in the data.ipynb file and the data i used in the Data/ folder.
