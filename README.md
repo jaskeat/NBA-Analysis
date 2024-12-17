@@ -50,7 +50,7 @@ As a final test, let’s examine the rankings of championship teams over the yea
 | :---------------------------: | :---------------------------: |
 |              6.1              |              5.1              |
 
-We see that championship teams typically rank lower in defensive ratings compared to their offensive ratings.
+We see that championship teams typically rank lower in defensive ratings compared to their offensive ratings. This shows that championship winning teams are better offensively than defensively compared to the rest of the league.
 
 ### Considerations and possible improvements
 
