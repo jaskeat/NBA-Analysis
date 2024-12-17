@@ -1,12 +1,12 @@
-# Does Defense Win Championships? An Analytical Exploration of NBA Success
+# Do Offense or Defense Win NBA Championships? An Analytical Exploration of NBA Success
 
-This project aims to analyse NBA Team stats from 2010 onwards to see if the 'Defense wins championships' is really true or if offense prevails. We will be analysing the regular season and playoff success to test our hypothesis.
+This project aims to analyze NBA Team stats from 2010 onwards to see if the quote "Defense wins championships" is really true or if offense prevails. We will be analyzing regular season and playoff success to test our hypothesis. In this project, I used Python for data analysis and visualization with the Matplotlib and Pandas libraries.
 
 ### Dataset
 
-The data for this project was obtained from the [Official NBA website](https://www.nba.com/stats/teams/advanced). I combined the data from all the seasons. The dataset includes various metrics on the stats for each team in that season.
+The data for this project was obtained from the [Official NBA website](https://www.nba.com/stats/teams/advanced). I combined the data from all the seasons. The dataset includes various metrics on the stats for each team in that season, including offensive and defensive ratings, which are crucial for understanding team performance.
 
-#### Dataset preview:
+#### Dataset Preview:
 
 | Rank | Team                  | Win %    | Def Rtg | Off Rtg | Champion |
 | ---- | --------------------- | -------- | ------- | ------- | -------- |
@@ -14,13 +14,13 @@ The data for this project was obtained from the [Official NBA website](https://w
 | 2    | Denver Nuggets        | 0.695122 | 112.3   | 117.8   | 0        |
 | 3    | Oklahoma City Thunder | 0.695122 | 111     | 118.3   | 0        |
 
-This is the main jist of the data that we will be using which shows the stats for each team. The NBA is now flooded with various Advanced Stats,but we will use the offensive and defensive rating from each season to determine how good or bad a team was on that side of the ball. Offensive rating is how many points a team scores per 100 possessions while Defensive rating is how many points the team concedes in a 100 possessions. Therefore, the lower the DefRtg the better and the higher the OffRtg the better.
+This is a snapshot of the data we will use, which shows the stats for each team over 14 seasons. In the NBA, various advanced stats exist, but we will focus on offensive and defensive ratings to assess team performance. Offensive rating measures how many points a team scores per 100 possessions, while defensive rating indicates how many points the team concedes in 100 possessions. Therefore, a lower defensive rating is better, while a higher offensive rating is preferable.
 
-The Champion column is a binary variable where 1 represents whether that team went on to win the championship. Our main indicator for success will be the win percentage for each team as the more games a team wins the better they theoretically are but we will also be looking into the champions as that is the ultimate prize.
+The Champion column is a binary variable where 1 represents whether that team won the championship. Our main indicator for success will be the win percentage for each team, as more wins theoretically indicate better performance. We will also consider championship status as the ultimate prize.
 
-### Analysing the data
+### Analyzing the Data
 
-First let's look at the correlation between the defensive/offensive rating at the win percentage for each team in the regular season over the last 14 years.
+First, let's look at the correlation between the defensive and offensive ratings and the win percentage for each team in the regular season over the last 14 years.
 
 ##### Regular Season
 
@@ -28,9 +28,9 @@ First let's look at the correlation between the defensive/offensive rating at th
 | :------------------------------: | :------------------------------: |
 | ![](Charts/Regular%20DefRtg.png) | ![](Charts/Regular%20OffRtg.png) |
 
-From these 2 charts we can see that there is a negative correlation for Def Rtg with win % and a positive correlation for Off Rtg. This checks out as the lower the defensive rating the better thus the negative correlation.
+From these two charts, we can see a negative correlation for defensive rating with win percentage and a positive correlation for offensive rating. This aligns with our understanding that a lower defensive rating is better, hence the negative correlation.
 
-We can see from both the correlation that both are extremely important to winning as the absolute correlation is around 0.5 for both. However, the correlation for offensive rating is higher with Win % which does suggest that Offensive Rating is more important. Does this hold up in the playoffs though?
+Both ratings are crucial for winning, with absolute correlations around 0.5 for both. However, the correlation for offensive rating is higher with win percentage, suggesting that offensive performance is more important. Does this hold true in the playoffs, however?
 
 #### Playoffs
 
@@ -38,20 +38,28 @@ We can see from both the correlation that both are extremely important to winnin
 | :------------------------------: | :------------------------------: |
 | ![](Charts/Playoff%20DefRtg.png) | ![](Charts/Playoff%20OffRtg.png) |
 
-In the playoffs we see a similar trend where the offensive rating has a higher absolute correlation with winning %. However, the different between offensive rating and defensive rating is smaller in the playoffs which may suggest that Offense is not as important in the playoffs compared to the regular season.
+In the playoffs, we observe a similar trend where offensive rating has a higher absolute correlation with winning percentage. However, the difference between offensive and defensive ratings is smaller in the playoffs, indicating that offense may not be as critical compared to the regular season.
 
-It should also be noted that the sample size for the playoffs is smaller as there are less games and more teams that go out without a win therefore there are more outliers in the playoffs.
+It’s also important to note that the sample size for the playoffs is smaller, as there are fewer games and more teams that exit without wins, leading to more outliers.
 
-#### Offensive vs Defensive Ranking
+#### Offensive vs. Defensive Ranking
 
-As a final test, lets see the rankings of the champions over the years, since Championships are the biggest prize and defines winning. Let us look at the average ranking of champions in the defensive rating and offensive rating. So how they ranked that year in each category.
+As a final test, let’s examine the rankings of championship teams over the years since championships are the ultimate prize. We will look at the average ranking of champions in defensive and offensive ratings.
 
 | Average Defensive Rating Rank | Average Offensive Rating Rank |
 | :---------------------------: | :---------------------------: |
 |              6.1              |              5.1              |
 
-We can see that teams that go on to win the championships are usually ranked lower across the NBA in their defensive ratings than their offensive ratings.
+We see that championship teams typically rank lower in defensive ratings compared to their offensive ratings.
+
+### Considerations and possible improvements
+
+Before we move onto the conclusions, I just want to highlight some possible improvements
+
+1. I only used Offensive and defensive ratings to determine how good a team was on that side of the ball but that could be oversimplification so to make a more accurate analysis, other advanced stats could be used
+
+2. I only considered seasons from 2010 which is the modern era of the NBA, the older eras were more defensive with slower pace so the results may be different for those eras. A separate analysis into the older eras could be done to prove this hypothesis.
 
 ### Conclusion
 
-From our analysis, we can confidentally conclude that despite defense being a vital piece to winning in the NBA, the other side of the ball is a bit more important. Championship teams are usually better offensive teams than defensive and the correlation between winning is higher for Offensive Ratings. The trumps the age old saying "Defense wins Championships".
+From our analysis, we can confidently conclude that while defense is a vital component of winning in the NBA, offense tends to be slightly more important. Championship teams generally exhibit better offensive stats than defensive stats, and the correlation between winning and offensive ratings is higher. This challenges the age-old saying, "Defense wins championships."
